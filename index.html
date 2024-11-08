@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛР 9</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+      
+        <div class="header-container">
+            <h2 id="userName" class="score">User</h2>
+            <h2 class="score1">Спроба <span id="currentRound">1</span> з 3</h2>
+            <h2 class="score2">Computer</h2>
+        </div>
+
+     
+        <div class="score-container">
+            <h1 id="userScore" class="score">0</h1>
+            <button id="playButton" onclick="playGame()">Generate</button>
+            <h1 id="computerScore" class="score">0</h1>
+        </div>
+
+  
+        <div class="card-container">
+            <div id="userCard" class="card"></div>
+            <div id="computerCard" class="card"></div>
+        </div>
+
+        <div id="resultMessage"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
