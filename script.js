@@ -15,7 +15,6 @@ const cards = [
         let currentRound = 1;
         const rounds = 3;
 
-        // Запит імені користувача під час завантаження сторінки
         window.onload = function () {
             const userName = prompt("Введіть ваше ім'я:");
             document.getElementById("userName").textContent = userName || "User";
@@ -23,31 +22,28 @@ const cards = [
 
         function playGame() {
             if (currentRound <= rounds) {
-                // Випадкове обрання карт
+
                 const userCard = cards[Math.floor(Math.random() * cards.length)];
                 const computerCard = cards[Math.floor(Math.random() * cards.length)];
 
-                // Оновлюємо рахунок
+
                 userScore += userCard.value;
                 computerScore += computerCard.value;
 
-                // Оновлюємо зображення карт
                 document.getElementById('userCard').innerHTML = `<img src="${userCard.image}" alt="${userCard.name}" style="width:100%; height:auto;">`;
                 document.getElementById('computerCard').innerHTML = `<img src="${computerCard.image}" alt="${computerCard.name}" style="width:100%; height:auto;">`;
 
-                // Оновлюємо рахунок на екрані
+
                 document.getElementById('userScore').textContent = userScore;
                 document.getElementById('computerScore').textContent = computerScore;
                 document.getElementById('currentRound').textContent = currentRound;
 
-                // Відображення повідомлення про результати раунду
                 let resultMessage = `<p>Ваша карта: ${userCard.name} (номінал: ${userCard.value})</p>`;
                 resultMessage += `<p>Карта комп'ютера: ${computerCard.name} (номінал: ${computerCard.value})</p>`;
                 document.getElementById('resultMessage').innerHTML = resultMessage;
 
                 currentRound++;
 
-                // Перевірка закінчення гри
                 if (currentRound > rounds) {
                     if (userScore > computerScore) {
                         document.getElementById('resultMessage').innerHTML += "<p>Вітаємо, ви перемогли за сумою очок!</p>";
